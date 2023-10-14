@@ -1,28 +1,18 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import Home from "./Home";
+import { Routes, Route, Link } from "react-router-dom";
+import Create_thread from "./Create_thread";
 
 function App() {
-  const [threadsList, setThreadsList] = useState();
-
-  useEffect(() => {
-    fetch("https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads")
-      .then((response) => response.json())
-      .then((data) => setThreadsList(data));
-  }, []);
-
-  // useEffectが動いた後にthreadsListを取得するためのメソッド
-  const threadsListDisplay = () => {
-    if (threadsList !== undefined) {
-      return threadsList.map((threads, id) => (
-        <li key={id}>{threads.title}</li>
-      ));
-    }
-  };
-
   return (
     <div className="App">
-      <header className="App-header"></header>
-      <ul>{threadsListDisplay()}</ul>
+      <header className="home-header">掲示板</header>
+      <Link to="/Create_thread">スレッドをたてる</Link>
+      {/* <Link to="/">Home</Link> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Create_thread" element={<Create_thread />} />
+      </Routes>
     </div>
   );
 }
