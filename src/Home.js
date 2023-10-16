@@ -21,6 +21,7 @@ function Home() {
 
   return (
       <div className="home">
+        <h1>新着スレッド</h1>
         <ul>{threadsListDisplay()}</ul>
       </div>
   );
