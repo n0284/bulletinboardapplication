@@ -1,21 +1,22 @@
 header {
+  line-height: 65px;
   position: fixed;
   top: 0;
   width: 100%;
   float: left;
-  height: 50px;
+  height: 70px;
   align-items: center;
   font-weight: 500;
   font-size: 25px;
-  background-color: rgb(91, 240, 86);
+  background-color: rgb(25, 145, 21);
   color: #fff;
 }
 
 #new {
   float: right;
-  line-height: 50px;
+  line-height: 65px;
   font-size: 15px;
   margin-left: 100px;
-  background-color: rgb(91, 240, 86);
+  background-color: rgb(25, 145, 21);
   color: #fff;
 }

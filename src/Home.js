@@ -20,10 +20,12 @@ function Home() {
   };
 
   return (
-      <div className="home">
-        <h1>新着スレッド</h1>
+    <div className="home">
+      <h1>新着スレッド</h1>
+      <div class="list">
         <ul>{threadsListDisplay()}</ul>
       </div>
+    </div>
   );
 }
 

@@ -17,7 +17,7 @@ function CreateThread() {
       .then((response) => {
         // postした結果失敗だった場合
         if (!response.ok) {
-          console.error('サーバーエラー');
+          console.error("サーバーエラー");
           console.error(response.json());
         }
         // postしたらフォームをクリア
@@ -32,10 +32,21 @@ function CreateThread() {
   return (
     <div className="Create_thread">
       <h1>スレッド新規作成</h1>
-      <input ref={textRef} type="text" />
-      <button onClick={() => post(textRef.current.value)}>作成</button>
-      <p></p>
-      <Link to="/">Topに戻る</Link>
+      <div className="input">
+        <input ref={textRef} type="text" class="threadname" />
+      </div>
+      <div class="buttondiv">
+        <div class="link">
+          <Link to="/" class="top">
+            Topに戻る
+          </Link>
+        </div>
+        <div class="create">
+          <button class="button" onClick={() => post(textRef.current.value)}>
+            作成
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

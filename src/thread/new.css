@@ -1,0 +1,34 @@
+.input{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.threadname{
+    background-color: #fff;
+    border: none;
+    border-radius: 4px;
+    width: 400px;
+    height: 70px;
+    font-size: 25px;
+}
+
+.buttondiv{
+    display: flex;
+    justify-content: center;
+}
+
+.button{
+    background-color: rgb(25, 145, 21);
+    border: none;
+    margin-left: 220px;
+    margin-top: 40px;
+    border-radius: 4px;
+    width: 100px;
+    height: 50px;
+    font-size: 25px;
+    color: #fff;
+}
+
+.link{
+    margin-top: 65px;
+}
