@@ -13,8 +13,8 @@ function Home() {
   // useEffectが動いた後にthreadsListを取得するためのメソッド
   const threadsListDisplay = () => {
     if (threadsList !== undefined) {
-      return threadsList.map((threads, id) => (
-        <li key={id}>{threads.title}</li>
+      return threadsList.map((thread) => (
+        <li key={thread.id}>{thread.title}</li>
       ));
     }
   };
@@ -22,7 +22,7 @@ function Home() {
   return (
     <div className="home">
       <h1>新着スレッド</h1>
-      <div class="list">
+      <div className="list">
         <ul>{threadsListDisplay()}</ul>
       </div>
     </div>

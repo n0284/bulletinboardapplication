@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import React, { useRef } from "react";
 
 function CreateThread() {
+  // useStateだと１文字ずつ再読込されてしまうのでuseRefを使う
   const textRef = useRef("");
 
   const post = (text) => {
