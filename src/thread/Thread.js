@@ -7,6 +7,7 @@ function Thread() {
   // 投稿一覧の取得
   useEffect(() => {
     // threadId（仮）Home.jsからもらう
+    // スレッドタイトルももらう htmlのh1に入れる
     const threadId = "32dd0c37-ce1b-4ebe-bac7-2e7e022da345"
     fetch("https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads/" + threadId + "/posts")
       .then((response) => response.json())
