@@ -34,16 +34,16 @@ function CreateThread() {
     <div className="Create_thread">
       <h1>スレッド新規作成</h1>
       <div className="input">
-        <input ref={textRef} type="text" class="threadname" />
+        <input ref={textRef} type="text" className="threadname" />
       </div>
-      <div class="buttondiv">
-        <div class="link">
-          <Link to="/" class="top">
+      <div className="buttondiv">
+        <div className="link">
+          <Link to="/" className="top">
             Topに戻る
           </Link>
         </div>
-        <div class="create">
-          <button class="button" onClick={() => post(textRef.current.value)}>
+        <div className="create">
+          <button className="button" onClick={() => post(textRef.current.value)}>
             作成
           </button>
         </div>

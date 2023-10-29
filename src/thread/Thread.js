@@ -1,18 +1,20 @@
 import "./Thread.css";
 import React, { useState, useEffect } from "react";
+import { useLocation } from 'react-router-dom';
 
-function Thread() {
+function Thread(threadData) {
+  // Home.jsからもらったスレッドID、スレッドタイトルの受け取り
+  const location = useLocation();
+  const state = location.state;
+
   const [threadPosts, setThreadPosts] = useState();
 
   // 投稿一覧の取得
   useEffect(() => {
-    // threadId（仮）Home.jsからもらう
-    // スレッドタイトルももらう htmlのh1に入れる
-    const threadId = "32dd0c37-ce1b-4ebe-bac7-2e7e022da345"
-    fetch("https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads/" + threadId + "/posts")
+    fetch("https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads/" + state.id + "/posts")
       .then((response) => response.json())
       .then((data) => setThreadPosts(data));
-  }, []);
+  }, [state.id]);
 
   // useEffectが動いた後にthreadPostsを取得するためのメソッド
   const threadsPostsDisplay = () => {
@@ -26,7 +28,7 @@ function Thread() {
 
   return (
     <div className="Thread">
-      <h1>新着スレッド</h1>
+      <h1>{state.title}</h1>
       <div className="list">
         <ul>{threadsPostsDisplay()}</ul>
       </div>
